@@ -4,11 +4,13 @@ import {v4 as uuid} from 'uuid'
 
 @Entity("users")
 class User {
+
     constructor(){
         if(!this.id){
             this.id = uuid()
         }
     }
+
     @PrimaryColumn()
     readonly id:string
 
@@ -22,7 +24,7 @@ class User {
     password: string;
 
     @CreateDateColumn()
-    create_at: Date;
+    created_at: Date;
 }
 
 export {User}

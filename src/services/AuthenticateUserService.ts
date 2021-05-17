@@ -25,18 +25,19 @@ class AuthenticateUserService {
 
         const comparePassword = compare(password, user.password)
 
-if(!comparePassword){
-    return {
-        error: 'incorrect password'
-    }
-}
-        const {secret, expiresIn} = authConfig.jwt
+        if(!comparePassword){
+            return {
+                error: 'incorrect password'
+            }
+        }
+        const {privateKey, expiresIn} = authConfig.jwt
 
-        const token = sign({"role":"user"}, secret, {
+        const token = sign({"role":"user"}, privateKey, {
+            algorithm:'RS256',
             subject: user.id,
             expiresIn
 
-        });
+        })
 
         return token;
 

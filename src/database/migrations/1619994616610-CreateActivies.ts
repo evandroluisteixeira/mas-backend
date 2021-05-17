@@ -18,12 +18,16 @@ export class CreateActivies1619994616610 implements MigrationInterface {
                     },
                     {
                         name: "activy_date",
-                        type: "varchar"
+                        type: "timestamp"
                     },
                     {
                         name: "course_unit_id",
-                        type: "timestamp",
-                        default: "now()"
+                        type: "varchar",
+                    },
+                    {
+                        name:"created_at",
+                        type:"timestamp",
+                        default:"now()",
                     }
                 ],
                 foreignKeys: [
