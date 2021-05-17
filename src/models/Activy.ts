@@ -18,7 +18,7 @@ class Activy {
     @Column()
     name: string;
 
-    @Column()
+    @CreateDateColumn()
     activy_date: Date;
 
     @Column()
