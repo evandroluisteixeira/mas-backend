@@ -7,6 +7,7 @@
     "database": "mas",
     "migrations": ["./src/database/migrations/**.ts"],
     "entities": ["./src/models/*.ts"],
+    "syncronize":true,
     "cli": {
         "migrationsDir": "./src/database/migrations"
     }
